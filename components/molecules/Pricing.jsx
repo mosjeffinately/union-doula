@@ -12,30 +12,58 @@ import { FaCircle } from 'react-icons/fa';
 
 import { PriceBox } from '../atoms/PriceBox';
 
-const daytimeDesc = (
-    <List color="white" spacing={4}>
-        <ListItem whiteSpace="nowrap">
-            <ListIcon
-                as={FaCircle}
-                color="white"
-                fontSize="0.375rem"
-                mt="-0.1875rem"
-                verticalAlign="middle"
-            />
-            Support between 8AM and 8PM
-        </ListItem>
-        <ListItem whiteSpace="nowrap">
-            <ListIcon
-                as={FaCircle}
-                color="white"
-                fontSize="0.375rem"
-                mt="-0.1875rem"
-                verticalAlign="middle"
-            />
-            Must schedule a minimum of 4 hours
-        </ListItem>
-    </List>
-);
+const generateDesc = items => {
+    return (
+        <List color="white" spacing={4}>
+            {items.map(item => (
+                <ListItem whitespace="nowrap">
+                    <ListIcon
+                        as={FaCircle}
+                        color="white"
+                        fontSize="0.375rem"
+                        mt="-0.1875rem"
+                        verticalAlign="middle"
+                    />
+                    {item}
+                </ListItem>
+            ))}
+        </List>
+    );
+};
+
+const daytimeDesc = [
+    'Support between 8AM and 8PM',
+    'Must schedule a minimum of 4 hours'
+];
+
+const nighttimeDesc = [
+    'Support between 8PM and 8AM',
+    'Must schedule a minimum of 4 hours'
+];
+
+const pkg1Desc = [
+    '24 hours of love for your new bundle',
+    'Daytime shifts only',
+    'Can be scheduled in shifts of 4-8 hours'
+];
+
+const pkg2Desc = [
+    '48 hours of love for your new bundle',
+    'Daytime shifts only',
+    'Can be scheduled in shifts of 4-8 hours'
+];
+
+const pkg3Desc = [
+    'Includes 5 9-hour overnight shifts',
+    'Typically scheduled from 10PM - 7AM',
+    'Excellent gift of sleep to new parents'
+];
+
+const pkg4Desc = [
+    'Includes 10 9-hour overnight shifts',
+    'Typically scheduled from 10PM - 7AM',
+    'Excellent gift of sleep to new parents'
+];
 
 export const Pricing = () => (
     <Box backgroundColor="teal.500" width="full">
@@ -72,13 +100,13 @@ export const Pricing = () => (
             py={6}
         >
             <PriceBox
-                description={daytimeDesc}
+                description={generateDesc(daytimeDesc)}
                 mx={6}
                 price="$25 / hour"
                 title="Daytime"
             />
             <PriceBox
-                description=""
+                description={generateDesc(nighttimeDesc)}
                 mx={6}
                 price="$30 / hour"
                 title="Nighttime"
@@ -102,13 +130,13 @@ export const Pricing = () => (
             py={6}
         >
             <PriceBox
-                description=""
+                description={generateDesc(pkg1Desc)}
                 mx={6}
                 price="$550"
                 title="24 Hour Bundle"
             />
             <PriceBox
-                description=""
+                description={generateDesc(pkg2Desc)}
                 mx={6}
                 price="$1,100"
                 title="48 Hour Bundle"
@@ -121,13 +149,13 @@ export const Pricing = () => (
             py={6}
         >
             <PriceBox
-                description=""
+                description={generateDesc(pkg3Desc)}
                 mx={6}
                 price="$1,250"
                 title="5 Overnights Bundle"
             />
             <PriceBox
-                description=""
+                description={generateDesc(pkg4Desc)}
                 mx={6}
                 price="$2,500"
                 title="10 Overnights Bundle"

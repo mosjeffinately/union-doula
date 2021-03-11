@@ -5,8 +5,9 @@ export const PriceBox = ({ description, price, title, ...rest }) => {
     return (
         <Box
             borderColor="gray.200"
-            borderWidth="0.0625rem"
-            shadow="md"
+            borderWidth="0.125rem"
+            rounded="lg"
+            shadow="lg"
             width="25rem"
             {...rest}
         >
@@ -26,7 +27,7 @@ export const PriceBox = ({ description, price, title, ...rest }) => {
                     </Heading>
                 </Flex>
             </Box>
-            <Box minHeight="12rem" px={5} py={4}>
+            <Box minHeight="12rem" px={10} py={4}>
                 {description}
             </Box>
         </Box>
