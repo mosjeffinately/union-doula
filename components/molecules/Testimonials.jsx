@@ -28,7 +28,7 @@ export const Testimonials = () => (
                     my c-section. Rina was so positive, caring, helpful and
                     supportive during my last pregnancy. I highly recommend
                     treating yourself and your family to the benefits of a doula
-                    💜 &rdquo;
+                    &rdquo;
                 </Text>
                 <Flex align="center" direction="row" justify="flex-end" mr={5}>
                     <Text ml={6}>- Harmony</Text>
