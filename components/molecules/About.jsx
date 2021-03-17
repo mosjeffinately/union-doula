@@ -4,7 +4,6 @@ import {
     Box,
     Flex,
     Heading,
-    IconButton,
     Link,
     List,
     ListIcon,
@@ -12,10 +11,7 @@ import {
     Text
 } from '@chakra-ui/react';
 import {
-    FaCircle,
-    FaFacebookSquare,
-    FaInstagram,
-    FaLinkedin
+    FaCircle
 } from 'react-icons/fa';
 import headshot from '../../public/images/rina-louise-cropped.jpg';
 
@@ -109,7 +105,7 @@ export const About = () => {
                 </Flex>
                 <Flex
                     alignItems="center"
-                    backgroundColor="green.300"
+                    backgroundColor="green.500"
                     direction="column"
                     justifyContent="center"
                     py={20}
@@ -132,9 +128,9 @@ export const About = () => {
                         information on the role and benefits of a postpartum
                         doula, see the resources below.
                     </Text>
-                    <List spacing={3}>
+                    <List fontSize="1.125rem" spacing={3}>
                         <ListItem>
-                            <Text color="white" fontSize="1.25rem">
+                            <Text color="white">
                                 <ListIcon
                                     as={FaCircle}
                                     fontSize="0.5rem"
@@ -150,7 +146,7 @@ export const About = () => {
                             </Text>
                         </ListItem>
                         <ListItem>
-                            <Text color="white" fontSize="1.25rem">
+                            <Text color="white">
                                 <ListIcon
                                     as={FaCircle}
                                     fontSize="0.5rem"
@@ -167,7 +163,7 @@ export const About = () => {
                             </Text>
                         </ListItem>
                         <ListItem>
-                            <Text color="white" fontSize="1.25rem">
+                            <Text color="white">
                                 <ListIcon
                                     as={FaCircle}
                                     fontSize="0.5rem"

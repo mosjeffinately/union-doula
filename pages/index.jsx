@@ -6,8 +6,9 @@ import { About } from '../components/molecules/About';
 import { Contact } from '../components/molecules/Contact';
 import { Intro } from '../components/molecules/Intro';
 import { Pricing } from '../components/molecules/Pricing';
-import { Services } from '../components/molecules/Services';
 import { Resources } from '../components/molecules/Resources';
+import { Services } from '../components/molecules/Services';
+import { Testimonials} from '../components/molecules/Testimonials';
 import { Footer } from '../components/organisms/Footer';
 import { Header } from '../components/organisms/Header';
 import { Layout } from '../components/templates/Layout';
@@ -33,6 +34,9 @@ const Index = () => (
             </Box>
             <Box id="resources">
                 <Resources />
+            </Box>
+            <Box id="testimonials">
+                <Testimonials />
             </Box>
             <Box id="contact">
                 <Contact />

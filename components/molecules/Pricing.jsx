@@ -31,12 +31,12 @@ const generateDesc = items => {
 };
 
 const daytimeDesc = [
-    'Support between 8AM and 8PM',
+    'Support between 8 a.m. and 8 p.m.',
     'Must schedule a minimum of 4 hours'
 ];
 
 const nighttimeDesc = [
-    'Support between 8PM and 8AM',
+    'Support between 8 p.m. and 8 a.m.',
     'Must schedule a minimum of 8 hours'
 ];
 
@@ -54,18 +54,18 @@ const pkg2Desc = [
 
 const pkg3Desc = [
     'Includes 5 9-hour overnight shifts',
-    'Typically scheduled from 10PM - 7AM',
+    'Typically scheduled from 10 p.m. - 7 a.m.',
     'Excellent gift of sleep to new parents'
 ];
 
 const pkg4Desc = [
     'Includes 10 9-hour overnight shifts',
-    'Typically scheduled from 10PM - 7AM',
+    'Typically scheduled from 10 p.m. - 7 a.m.',
     'Excellent gift of sleep to new parents'
 ];
 
 export const Pricing = () => (
-    <Box backgroundColor="green.300" width="full">
+    <Box backgroundColor="green.500" pb={20} width="full">
         <Flex
             alignItems="center"
             direction="column"

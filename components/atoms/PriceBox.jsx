@@ -11,7 +11,7 @@ export const PriceBox = ({ description, price, title, ...rest }) => {
             width="25rem"
             {...rest}
         >
-            <Box backgroundColor="gray.500" height="10rem" borderTopRadius="lg" width="full">
+            <Box backgroundColor="green.600" height="10rem" borderTopRadius="lg" width="full">
                 <Flex
                     alignItems="center"
                     direction="column"
@@ -27,7 +27,7 @@ export const PriceBox = ({ description, price, title, ...rest }) => {
                     </Heading>
                 </Flex>
             </Box>
-            <Box backgroundColor="white" minHeight="12rem" px={10} py={4}>
+            <Box backgroundColor="white" minHeight="10rem" px={10} py={4}>
                 {description}
             </Box>
         </Box>

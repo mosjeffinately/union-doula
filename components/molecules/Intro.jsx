@@ -40,7 +40,7 @@ export const Intro = () => {
                 transform="translate(-50%, -50%)"
             >
                 <IconButton
-                    bg="green.300"
+                    bg="green.500"
                     fontSize="3xl"
                     height="4rem"
                     icon={<FaFacebookSquare />}
@@ -48,11 +48,11 @@ export const Intro = () => {
                     rounded="full"
                     width="4rem"
                     _hover={{
-                        bg: 'green.400'
+                        bg: 'green.300'
                     }}
                 />
                 <IconButton
-                    bg="green.300"
+                    bg="green.500"
                     fontSize="3xl"
                     height="4rem"
                     icon={<FaInstagram />}
@@ -60,11 +60,11 @@ export const Intro = () => {
                     rounded="full"
                     width="4rem"
                     _hover={{
-                        bg: 'green.400'
+                        bg: 'green.300'
                     }}
                 />
                 <IconButton
-                    bg="green.300"
+                    bg="green.500"
                     fontSize="3xl"
                     height="4rem"
                     icon={<FaLinkedin />}
@@ -72,7 +72,7 @@ export const Intro = () => {
                     rounded="full"
                     width="4rem"
                     _hover={{
-                        bg: 'green.400'
+                        bg: 'green.300'
                     }}
                 />
             </Flex>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
+import { Flex, Image, Link, Text } from '@chakra-ui/react';
 
 import LinkSmoothScroll from '../molecules/LinkSmoothScroll';
 
@@ -10,8 +10,8 @@ export const Header = () => {
         <Flex
             as="nav"
             align="center"
-            bg="green.300"
-            color="gray.500"
+            bg="green.500"
+            color="white"
             direction="row"
             justify="flex-start"
             pl="1.5rem"
@@ -49,6 +49,13 @@ export const Header = () => {
                     <LinkSmoothScroll href="/#resources">
                         <Text fontSize="lg" mr={4}>
                             Resources
+                        </Text>
+                    </LinkSmoothScroll>
+                </Link>
+                <Link>
+                    <LinkSmoothScroll href="/#testimonials">
+                        <Text fontSize="lg" mr={4}>
+                            Testimonials
                         </Text>
                     </LinkSmoothScroll>
                 </Link>

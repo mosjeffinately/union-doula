@@ -3,10 +3,10 @@ import {
     Box,
     Flex,
     Heading,
+    HStack,
     List,
     ListIcon,
     ListItem,
-    Stack,
     Text
 } from '@chakra-ui/react';
 import { FaCircle } from 'react-icons/fa';
@@ -56,17 +56,17 @@ export const Services = () => {
                 pb={20}
                 width="full"
             >
-                <Stack isInline spacing={12} align="center" width="2/3">
+                <HStack isInline spacing={12} align="center" width="2/3">
                     {items.map(item => (
                         <Box
-                            p={5}
-                            shadow="lg"
-                            borderWidth="2px"
+                            p={3}
+                            // shadow="lg"
+                            // borderWidth="2px"
                             flex="1"
-                            rounded="lg"
+                            // rounded="lg"
                             width="100%"
                         >
-                            <List spacing={12}>
+                            <List fontSize="1.125rem" spacing={5}>
                                 {item.map(desc => (
                                     <ListItem
                                         color="gray.700"
@@ -85,7 +85,7 @@ export const Services = () => {
                             </List>
                         </Box>
                     ))}
-                </Stack>
+                </HStack>
             </Flex>
         </Box>
     );
