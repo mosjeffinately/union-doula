@@ -8,16 +8,11 @@ export const Layout = ({ children, footer, header }) => {
             direction="column"
             fontFamily="body"
             justify="flex-start"
-            height="100vh"
-            width="full"
+            width="100%"
         >
-            <Box as="header" width="full">
-                {header}
-            </Box>
-            <Box as="main" width="full">{children}</Box>
-            <Box as="footer" width="full">
-                {footer}
-            </Box>
+            <Box as="header" width="100%">{header}</Box>
+            <Box as="main" width="100%">{children}</Box>
+            <Box as="footer" width="100%">{footer}</Box>
         </Flex>
     );
 };

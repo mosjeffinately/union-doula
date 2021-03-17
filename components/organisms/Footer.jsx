@@ -8,6 +8,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import logo from '../../public/images/Logo_White_PNG-cropped.png';
+import prideFlag from '../../public/images/64px-Gay_Pride_Flag.png';
 
 export const Footer = () => {
     return (
@@ -16,6 +17,7 @@ export const Footer = () => {
             bg="teal.500"
             direction="row"
             justify="space-between"
+            width="100%"
         >
             <Image alt="Union Doula" ml={4} p={6} height="8rem" src={logo} />
             <Flex
@@ -48,6 +50,9 @@ export const Footer = () => {
                     >
                         <FontAwesomeIcon size="2x" icon={faLinkedin} />
                     </Link>
+                </Box>
+                <Box mx={2} width="3.125rem">
+                    <Image alt="Pride Flag" src={prideFlag} />
                 </Box>
             </Flex>
         </Flex>

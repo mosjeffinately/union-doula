@@ -38,7 +38,7 @@ const daytimeDesc = [
 
 const nighttimeDesc = [
     'Support between 8PM and 8AM',
-    'Must schedule a minimum of 4 hours'
+    'Must schedule a minimum of 8 hours'
 ];
 
 const pkg1Desc = [

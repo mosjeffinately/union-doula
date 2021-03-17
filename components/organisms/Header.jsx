@@ -10,13 +10,14 @@ export const Header = () => {
         <Flex
             as="nav"
             align="center"
-            bg="teal.500"
+            bg="green.300"
             color="white"
             direction="row"
             justify="flex-start"
             pl="1.5rem"
             pr="0.75rem"
             py="0.75rem"
+            width="100%"
             wrap="wrap"
         >
             <Link href="/">
@@ -24,35 +25,35 @@ export const Header = () => {
             </Link>
             <Flex align="baseline" direction="row" justify="center" ml="auto">
                 <Link>
-                    <LinkSmoothScroll href="/home/#about">
+                    <LinkSmoothScroll href="/#about">
                         <Text fontSize="lg" mr={4}>
                             About
                         </Text>
                     </LinkSmoothScroll>
                 </Link>
                 <Link>
-                    <LinkSmoothScroll href="/home/#services">
+                    <LinkSmoothScroll href="/#services">
                         <Text fontSize="lg" mr={4}>
                             Services
                         </Text>
                     </LinkSmoothScroll>
                 </Link>
                 <Link>
-                    <LinkSmoothScroll href="/home/#pricing">
+                    <LinkSmoothScroll href="/#pricing">
                         <Text fontSize="lg" mr={4}>
                             Pricing
                         </Text>
                     </LinkSmoothScroll>
                 </Link>
                 <Link>
-                    <LinkSmoothScroll href="/home/#testimonials">
+                    <LinkSmoothScroll href="/#resources">
                         <Text fontSize="lg" mr={4}>
-                            Testimonials
+                            Resources
                         </Text>
                     </LinkSmoothScroll>
                 </Link>
                 <Link>
-                    <LinkSmoothScroll href="/home/#contact">
+                    <LinkSmoothScroll href="/#contact">
                         <Text fontSize="lg" mr={4}>
                             Contact
                         </Text>

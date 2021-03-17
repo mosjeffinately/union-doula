@@ -1,12 +1,16 @@
 import React from 'react';
-import { Box, Image } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
 import Head from 'next/head';
 
+import { About } from '../components/molecules/About';
+import { Contact } from '../components/molecules/Contact';
+import { Intro } from '../components/molecules/Intro';
+import { Pricing } from '../components/molecules/Pricing';
+import { Services } from '../components/molecules/Services';
+import { Resources } from '../components/molecules/Resources';
 import { Footer } from '../components/organisms/Footer';
 import { Header } from '../components/organisms/Header';
 import { Layout } from '../components/templates/Layout';
-
-import bannerImage from '../public/images/adult-baby-bed-225744-with-logo.jpg';
 
 const Index = () => (
     <Box>
@@ -15,13 +19,23 @@ const Index = () => (
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <Layout footer={<Footer />} header={<Header />}>
-            <Box>
-                <Image
-                    src={bannerImage}
-                    alt="Union Doula"
-                    objectFit="cover"
-                    opacity="0.7"
-                />
+            <Box id="home">
+                <Intro />
+            </Box>
+            <Box id="about">
+                <About />
+            </Box>
+            <Box id="services">
+                <Services />
+            </Box>
+            <Box id="pricing">
+                <Pricing />
+            </Box>
+            <Box id="resources">
+                <Resources />
+            </Box>
+            <Box id="contact">
+                <Contact />
             </Box>
         </Layout>
     </Box>
