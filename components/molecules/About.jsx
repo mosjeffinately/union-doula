@@ -14,7 +14,7 @@ import {
 import {
     FaCircle
 } from 'react-icons/fa';
-import headshot from '../../public/images/rina-louise-b&w.jpg';
+import headshot from '../../public/images/rina-louise-bw.jpg';
 
 export const About = () => {
     return (
