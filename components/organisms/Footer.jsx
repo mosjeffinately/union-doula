@@ -14,7 +14,7 @@ export const Footer = () => {
     return (
         <Flex
             align="center"
-            bg="teal.500"
+            bg="green.300"
             direction="row"
             justify="space-between"
             width="100%"

@@ -11,7 +11,7 @@ export const Header = () => {
             as="nav"
             align="center"
             bg="green.300"
-            color="white"
+            color="gray.500"
             direction="row"
             justify="flex-start"
             pl="1.5rem"

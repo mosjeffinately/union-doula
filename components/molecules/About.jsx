@@ -109,7 +109,7 @@ export const About = () => {
                 </Flex>
                 <Flex
                     alignItems="center"
-                    backgroundColor="teal.500"
+                    backgroundColor="green.300"
                     direction="column"
                     justifyContent="center"
                     py={20}

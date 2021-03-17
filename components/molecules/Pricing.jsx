@@ -14,12 +14,11 @@ import { PriceBox } from '../atoms/PriceBox';
 
 const generateDesc = items => {
     return (
-        <List color="white" spacing={4}>
+        <List color="gray.800" spacing={4}>
             {items.map(item => (
                 <ListItem whitespace="nowrap">
                     <ListIcon
                         as={FaCircle}
-                        color="white"
                         fontSize="0.375rem"
                         mt="-0.1875rem"
                         verticalAlign="middle"
@@ -66,7 +65,7 @@ const pkg4Desc = [
 ];
 
 export const Pricing = () => (
-    <Box backgroundColor="teal.500" width="full">
+    <Box backgroundColor="green.300" width="full">
         <Flex
             alignItems="center"
             direction="column"
