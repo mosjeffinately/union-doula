@@ -3,6 +3,7 @@ import {
     Avatar,
     Box,
     Flex,
+    Image,
     Heading,
     Link,
     List,
@@ -13,7 +14,7 @@ import {
 import {
     FaCircle
 } from 'react-icons/fa';
-import headshot from '../../public/images/rina-louise-cropped.jpg';
+import headshot from '../../public/images/rina-louise-b&w.jpg';
 
 export const About = () => {
     return (
@@ -40,10 +41,10 @@ export const About = () => {
                         pb={10}
                         width="full"
                     >
-                        <Avatar
+                        <Image
                             name="Rina Brulé"
-                            height="16rem"
                             width="16rem"
+                            rounded="md"
                             src={headshot}
                         />
                         <Heading as="h3" mb={2} mt={6}>
