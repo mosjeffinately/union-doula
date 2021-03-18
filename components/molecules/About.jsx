@@ -28,7 +28,7 @@ export const About = () => {
                 <Flex
                     backgroundColor="gray.200"
                     alignItems="center"
-                    color="gray.800"
+                    color="gray.700"
                     direction="column"
                     justifyContent="center"
                     py={20}
@@ -46,12 +46,12 @@ export const About = () => {
                             rounded="md"
                             src={headshot}
                         />
-                        <Heading as="h3" mb={2} mt={6}>
+                        <Heading as="h4" mb={2} mt={6} size="lg">
                             {`Rina Brulé`}
                         </Heading>
                         <Heading
                             as="h5"
-                            fontSize="1.875rem"
+                            fontSize="1.5rem"
                             fontWeight="medium"
                             mb={3}
                         >

@@ -52,6 +52,7 @@ export const Contact = () => {
             <Flex
                 as="form"
                 alignItems="center"
+                color="gray.700"
                 justifyContent="center"
                 py={20}
                 width="100%"

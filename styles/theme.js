@@ -5,16 +5,16 @@ export default {
     colors: {
         ...theme.colors,
         green: {
-            [50]: '#f6fafa',
-            [100]: '#d6eae7',
-            [200]: '#b5d9d4',
-            [300]: '#95c9c1',
-            [400]: '#75b8ae',
+            [50]: '#eaeee2',
+            [100]: '#d3ddc3',
+            [200]: '#bdcba3',
+            [300]: '#a6b984',
+            [400]: '#8fa865',
             [500]: '#768c4f', //'#55a79a',
-            [600]: '#44877c',
-            [700]: '#34665e',
-            [800]: '#234640',
-            [900]: '#132522'
+            [600]: '#5c6d3d',
+            [700]: '#414e2c',
+            [800]: '#272e1a',
+            [900]: '#0d0f08'
         }
     },
     fonts: {
@@ -25,6 +25,7 @@ export default {
     styles: {
         global: {
             body: {
+                color: 'gray.700',
                 fontFamily: 'body',
                 fontSize: '16px'
             }

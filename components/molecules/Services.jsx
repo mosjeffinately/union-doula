@@ -39,10 +39,10 @@ export const Services = () => {
                 pt={20}
                 pb={8}
             >
-                <Heading as="h2" color="gray.800" size="xl">
+                <Heading as="h2" color="gray.700" size="xl">
                     Services
                 </Heading>
-                <Text color="gray.800" fontSize="1.25rem" px="24rem" py={6}>
+                <Text color="gray.700" fontSize="1.25rem" px="24rem" py={6}>
                     My services include, but are not limited to the items listed
                     below. I am happy to work with you to address any unique
                     concern your family might have.

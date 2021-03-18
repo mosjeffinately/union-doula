@@ -14,7 +14,7 @@ import { PriceBox } from '../atoms/PriceBox';
 
 const generateDesc = items => {
     return (
-        <List color="gray.800" spacing={4}>
+        <List color="gray.700" spacing={4}>
             {items.map(item => (
                 <ListItem whitespace="nowrap">
                     <ListIcon
