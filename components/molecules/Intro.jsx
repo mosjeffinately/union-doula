@@ -50,7 +50,7 @@ export const Intro = () => {
                 justifyContent="center"
                 my={6}
                 position="absolute"
-                top="82.5%"
+                top="85%"
                 left="50%"
                 transform="translate(-50%, -50%)"
             >
