@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
     Box,
     Button,
+    Center,
     Checkbox,
     CheckboxGroup,
     Flex,
@@ -14,12 +15,14 @@ import {
     StackDivider,
     Text,
     Textarea,
-    VStack
+    VStack,
+    useBreakpointValue
 } from '@chakra-ui/react';
-import { FaEnvelope, FaMobileAlt, FaPhone } from 'react-icons/fa';
+import { send } from 'emailjs-com';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import PhoneInput from 'react-phone-number-input/input';
 
-export const Contact = () => {
+export const Contact = ({ emailjsConfig }) => {
     const [contactMethod, setContactMethod] = useState([]);
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -32,7 +35,7 @@ export const Contact = () => {
         if (checked) {
             checkedBoxes.push(value);
         }
-        console.log(checkedBoxes);
+
         setContactMethod(checkedBoxes);
     };
 
@@ -43,30 +46,89 @@ export const Contact = () => {
             setName(value);
         } else if (name === 'message') {
             setMessage(value);
-            Î;
         }
     };
 
+    const onSubmit = e => {
+        e.preventDefault();
+
+        const templateParams = {
+            contactMethod: contactMethod.join(', '),
+            email,
+            message,
+            name,
+            phone
+        };
+
+        send(
+            emailjsConfig.serviceId,
+            emailjsConfig.templateId,
+            templateParams,
+            emailjsConfig.userId
+        )
+            .then(response => {
+                console.log(response);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
+
     return (
-        <Box backgroundColor="gray.200">
-            <Flex
-                as="form"
-                alignItems="center"
-                color="gray.700"
-                justifyContent="center"
-                py={20}
-                width="100%"
-            >
+        <Box backgroundColor="gray.200" color="gray.700">
+            <Box px={[4, 8, 12]}>
+                <Center pt={[12, null, 20]}>
+                    <Heading as="h2" size="xl">
+                        Contact
+                    </Heading>
+                </Center>
+                <Center pt={4}>
+                    <Text fontSize="1.25rem">
+                        Let's talk about how I can help you relax into
+                        parenthood.
+                    </Text>
+                </Center>
+                <Center pt={4}>
+                    <Heading as="h4" size="md">
+                        Union Doula
+                    </Heading>
+                </Center>
+                <Center>
+                    <Box as="span" fontSize="1.25rem">
+                        <Box as={FaEnvelope} display="inline-block" />
+                        <Box as="span" ml={4}>
+                            <Link isExternal href="mailto:rina@uniondoula.com">
+                                rina@uniondoula.com
+                            </Link>
+                        </Box>
+                    </Box>
+                </Center>
+                <Center>
+                    <Box as="span" fontSize="1.25rem">
+                        <Box as={FaPhone} display="inline-block" />
+                        <Box as="span" ml={4}>
+                            (503) 701-0493
+                        </Box>
+                    </Box>
+                </Center>
                 <Flex
+                    as="form"
                     alignItems="center"
-                    direction="column"
                     justifyContent="center"
+                    onSubmit={onSubmit}
+                    py={12}
                     width="100%"
                 >
-                    <HStack align="flex-start" spacing={20} width="75%">
+                    <Flex
+                        alignItems="center"
+                        direction="column"
+                        justifyContent="center"
+                        width="100%"
+                    >
+                        {/* <HStack align="flex-start" spacing={20} width="75%"> */}
                         <VStack
                             divider={<StackDivider borderColor="gray.200" />}
-                            width="50%"
+                            width={['100%', null, '50%']}
                         >
                             <FormControl>
                                 <FormLabel htmlFor="name">Name</FormLabel>
@@ -114,21 +176,21 @@ export const Contact = () => {
                                         <Checkbox
                                             borderColor="gray.700"
                                             onChange={onChangeCheckbox}
-                                            value="email"
+                                            value="Email"
                                         >
                                             Email
                                         </Checkbox>
                                         <Checkbox
                                             borderColor="gray.700"
                                             onChange={onChangeCheckbox}
-                                            value="phone"
+                                            value="Phone"
                                         >
                                             Phone
                                         </Checkbox>
                                         <Checkbox
                                             borderColor="gray.700"
                                             onChange={onChangeCheckbox}
-                                            value="text"
+                                            value="Text"
                                         >
                                             Text
                                         </Checkbox>
@@ -149,6 +211,7 @@ export const Contact = () => {
                                 alignSelf="flex-end"
                                 backgroundColor="green.500"
                                 color="white"
+                                type="submit"
                                 _hover={{
                                     backgroundColor: 'green.300'
                                 }}
@@ -156,38 +219,9 @@ export const Contact = () => {
                                 Send
                             </Button>
                         </VStack>
-                        <VStack spacing={5}>
-                            <Heading as="h3" size="lg">
-                                Union Doula
-                            </Heading>
-                            <Box as="span" fontSize="1.25rem">
-                                <Box
-                                    as={FaEnvelope}
-                                    display="inline-block"
-                                    ml={10}
-                                />
-                                <Box as="span" ml={4}>
-                                    <Link
-                                        isExternal
-                                        href="mailto:rina@uniondoula.com"
-                                    >
-                                        rina@uniondoula.com
-                                    </Link>
-                                </Box>
-                            </Box>
-                            <Box as="span" fontSize="1.25rem">
-                                <Box
-                                    as={FaPhone}
-                                    display="inline-block"
-                                />
-                                <Box as="span" ml={4}>
-                                    (503) 701-0493
-                                </Box>
-                            </Box>
-                        </VStack>
-                    </HStack>
+                    </Flex>
                 </Flex>
-            </Flex>
+            </Box>
         </Box>
     );
 };

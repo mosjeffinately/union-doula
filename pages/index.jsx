@@ -8,12 +8,12 @@ import { Intro } from '../components/molecules/Intro';
 import { Pricing } from '../components/molecules/Pricing';
 import { Resources } from '../components/molecules/Resources';
 import { Services } from '../components/molecules/Services';
-import { Testimonials} from '../components/molecules/Testimonials';
+import { Testimonials } from '../components/molecules/Testimonials';
 import { Footer } from '../components/organisms/Footer';
 import { Header } from '../components/organisms/Header';
 import { Layout } from '../components/templates/Layout';
 
-const Index = () => (
+const Index = ({emailjsConfig}) => (
     <Box>
         <Head>
             <title>Union Doula</title>
@@ -39,10 +39,24 @@ const Index = () => (
                 <Testimonials />
             </Box>
             <Box id="contact">
-                <Contact />
+                <Contact emailjsConfig={emailjsConfig} />
             </Box>
         </Layout>
     </Box>
 );
+
+export async function getStaticProps() {
+    const emailjsConfig = {
+        serviceId: process.env.EMAILJS_SERVICE_ID,
+        templateId: process.env.EMAILJS_TEMPLATE_ID,
+        userId: process.env.EMAILJS_USER_ID
+    };
+
+    return {
+        props: {
+            emailjsConfig
+        }
+    };
+}
 
 export default Index;

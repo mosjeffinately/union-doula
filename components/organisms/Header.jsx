@@ -1,11 +1,16 @@
 import React from 'react';
-import { Flex, Image, Link, Text } from '@chakra-ui/react';
+import { Flex, Image, Link, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import LinkSmoothScroll from '../molecules/LinkSmoothScroll';
 
 import logo from '../../public/images/Logo_White_Horizontal_PNG-cropped.png';
 
 export const Header = () => {
+    const displayLinks = useBreakpointValue({
+        base: 'none',
+        md: 'flex'
+    });
+
     return (
         <Flex
             as="nav"
@@ -13,17 +18,29 @@ export const Header = () => {
             bg="green.500"
             color="white"
             direction="row"
-            justify="flex-start"
+            flexShrink="0"
+            justify="space-between"
             pl="1.5rem"
             pr="0.75rem"
             py="0.75rem"
             width="100%"
-            wrap="wrap"
+            wrap="nowrap"
         >
-            <Link href="/">
-                <Image alt="Union Doula" width="10rem" src={logo} />
+            <Link flexShrink="0" href="/">
+                <Image
+                    alt="Union Doula"
+                    objectFit="cover"
+                    width="10rem"
+                    src={logo}
+                />
             </Link>
-            <Flex align="baseline" direction="row" justify="center" ml="auto">
+            <Flex
+                align="baseline"
+                direction="row"
+                display={displayLinks}
+                justify="center"
+                ml="auto"
+            >
                 <Link>
                     <LinkSmoothScroll href="/#about">
                         <Text fontSize="lg" mr={4}>

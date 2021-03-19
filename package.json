@@ -17,6 +17,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@zeit/next-css": "^1.0.1",
+    "axios": "^0.21.1",
+    "emailjs-com": "^2.6.4",
     "emotion-theming": "^10.0.27",
     "framer-motion": "^3.10.2",
     "next": "9.5.2",

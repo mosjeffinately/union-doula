@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     Box,
+    Center,
     Flex,
     Image,
     Heading,
@@ -8,22 +9,28 @@ import {
     List,
     ListIcon,
     ListItem,
-    Text
+    Text,
+    useBreakpointValue
 } from '@chakra-ui/react';
-import {
-    FaCircle
-} from 'react-icons/fa';
+import { FaCircle } from 'react-icons/fa';
 import headshot from '../../public/images/rina-louise-bw.jpg';
 
 export const About = () => {
+    const px = useBreakpointValue({
+        base: '2rem',
+        md: '8rem',
+        lg: '12rem',
+        xl: '16rem'
+    });
+
     return (
         <Box width="full">
             <Flex
                 alignItems="center"
                 direction="column"
-                height="full"
+                height="100%"
                 justifyContent="flex-start"
-                width="full"
+                width="100%"
             >
                 <Flex
                     backgroundColor="gray.200"
@@ -38,7 +45,7 @@ export const About = () => {
                         direction="column"
                         justifyContent="center"
                         pb={10}
-                        width="full"
+                        width="100%"
                     >
                         <Image
                             name="Rina Brulé"
@@ -61,7 +68,7 @@ export const About = () => {
                     <Heading as="h2" size="xl">
                         About Me
                     </Heading>
-                    <Text fontSize="1.25rem" px="16rem" py={6}>
+                    <Text fontSize="1.25rem" px={px} py={6}>
                         Babies and kids have always been a big part of my life -
                         I started “babysitting” at age 10, worked at sleep-away
                         camps through college, and my husband and I were very
@@ -71,7 +78,7 @@ export const About = () => {
                         Breastfeeding was challenging and it took my daughter a
                         month to get back to birth weight.
                     </Text>
-                    <Text fontSize="1.25rem" px="16rem" py={6}>
+                    <Text fontSize="1.25rem" px={px} py={6}>
                         During that time, I felt like an octopus and a turtle at
                         the same time. Reaching out for resources wherever I
                         could find them, while simultaneously wanting to crawl
@@ -81,7 +88,7 @@ export const About = () => {
                         incredible, terrifying, wonderful, overwhelming,
                         beautiful “fourth trimester.”
                     </Text>
-                    <Text fontSize="1.25rem" px="16rem" py={6}>
+                    <Text fontSize="1.25rem" px={px} py={6}>
                         Through Union Doula, I will support your family as you
                         transition into your new reality, whether you’re
                         first-time parents or expanding your existing family. I
@@ -93,7 +100,7 @@ export const About = () => {
                     <Text
                         alignSelf="flex-start"
                         fontSize="1.25rem"
-                        px="16rem"
+                        px={px}
                         py={6}
                     >
                         I am a Certified Postpartum Doula through{' '}
@@ -110,10 +117,12 @@ export const About = () => {
                     justifyContent="center"
                     py={20}
                 >
-                    <Heading as="h2" color="white" size="xl">
-                        What does a Postpartum Doula do?
-                    </Heading>
-                    <Text color="white" fontSize="1.25rem" px="16rem" py={6}>
+                    <Center px={px}>
+                        <Heading as="h2" color="white" size="xl">
+                            What does a Postpartum Doula do?
+                        </Heading>
+                    </Center>
+                    <Text color="white" fontSize="1.25rem" px={px} py={6}>
                         A postpartum doula is a non-medical professional who
                         provides support to your entire family during the first
                         few months after the arrival of your baby. Families
@@ -128,7 +137,7 @@ export const About = () => {
                         information on the role and benefits of a postpartum
                         doula, see the resources below.
                     </Text>
-                    <List fontSize="1.125rem" spacing={3}>
+                    <List fontSize="1.125rem" px={px} spacing={3}>
                         <ListItem>
                             <Text color="white">
                                 <ListIcon

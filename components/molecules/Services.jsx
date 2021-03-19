@@ -1,17 +1,27 @@
 import React from 'react';
 import {
     Box,
+    Center,
     Flex,
     Heading,
-    HStack,
     List,
     ListIcon,
     ListItem,
-    Text
+    Stack,
+    Text,
+    useBreakpointValue
 } from '@chakra-ui/react';
 import { FaCircle } from 'react-icons/fa';
 
 export const Services = () => {
+    const px = useBreakpointValue({
+        base: '2rem',
+        md: '8rem',
+        lg: '12rem',
+        xl: '16rem'
+    });
+    const stackDirection = useBreakpointValue({ base: 'column', md: 'row' });
+
     const items = [
         [
             'Breastfeeding support and instruction',
@@ -31,46 +41,58 @@ export const Services = () => {
         ]
     ];
     return (
-        <Box backgroundColor="gray.200" width="full">
+        <Box backgroundColor="gray.200" pt={20} pb={20} width="full">
             <Flex
                 alignItems="center"
                 direction="column"
                 justifyContent="center"
-                pt={20}
                 pb={8}
             >
                 <Heading as="h2" color="gray.700" size="xl">
                     Services
                 </Heading>
-                <Text color="gray.700" fontSize="1.25rem" px="24rem" py={6}>
+                <Text
+                    color="gray.700"
+                    fontSize="1.25rem"
+                    px={['2rem', null, '8rem', '24rem']}
+                    py={6}
+                >
                     My services include, but are not limited to the items listed
                     below. I am happy to work with you to address any unique
                     concern your family might have.
                 </Text>
             </Flex>
-            <Flex
+            {/* <Flex
                 alignItems="flex-start"
                 direction="row"
                 justifyContent="center"
                 px={20}
                 pb={20}
                 width="full"
-            >
-                <HStack isInline spacing={12} align="center" width="2/3">
+            > */}
+            <Center>
+                <Stack
+                    direction={stackDirection}
+                    px={px}
+                    spacing={[2, null, 12]}
+                    align="center"
+                    width="2/3"
+                >
                     {items.map(item => (
                         <Box
-                            p={3}
+                            px={5}
+                            py={[0, null, 3]}
                             // shadow="lg"
                             // borderWidth="2px"
                             flex="1"
                             // rounded="lg"
                             width="100%"
                         >
-                            <List fontSize="1.125rem" spacing={5}>
+                            <List fontSize="1.125rem" spacing={[2, null, 5]}>
                                 {item.map(desc => (
                                     <ListItem
                                         color="gray.700"
-                                        whiteSpace="nowrap"
+                                        whiteSpace={['wrap', null, 'nowrap']}
                                     >
                                         <ListIcon
                                             as={FaCircle}
@@ -85,8 +107,9 @@ export const Services = () => {
                             </List>
                         </Box>
                     ))}
-                </HStack>
-            </Flex>
+                </Stack>
+            </Center>
+            {/* </Flex> */}
         </Box>
     );
 };

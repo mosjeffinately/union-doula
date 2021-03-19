@@ -11,17 +11,6 @@ export default class extends Document {
                 }}
             >
                 <Head>
-                    <title>Union Doula - Serving Central New York</title>
-                    <meta
-                        name="description"
-                        content="Providing postpartum doula services to the Central New York region."
-                    />
-                    <meta name="robots" content="index, follow" />
-                    <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1.0"
-                    />
-                    <meta charset="UTF-8" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link
                         href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap"

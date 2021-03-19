@@ -1,5 +1,13 @@
 import React from 'react';
-import { Box, Flex, Heading, IconButton, Image, Text } from '@chakra-ui/react';
+import {
+    Box,
+    Flex,
+    Center,
+    IconButton,
+    Image,
+    Text,
+    useBreakpointValue
+} from '@chakra-ui/react';
 import {
     FaFacebookSquare,
     FaInstagram,
@@ -9,6 +17,10 @@ import {
 import bannerImage from '../../public/images/adult-baby-bed-225744-with-logo.jpg';
 
 export const Intro = () => {
+    const fontSize = useBreakpointValue({ base: '1rem', md: '1.625rem' });
+    const top = useBreakpointValue({ base: '80%', md: '77.5%' })
+    const buttonDisplay = useBreakpointValue({ base: 'none', md: 'flex' });
+
     return (
         <Box position="relative" width="100%">
             <Image
@@ -17,21 +29,24 @@ export const Intro = () => {
                 objectFit="cover"
                 opacity="0.7"
             />
-            <Text
-                color="white"
-                fontSize="1.625rem"
-                fontWeight="medium"
-                position="absolute"
-                top="77.5%"
-                left="50%"
-                transform="translate(-50%, -50%)"
-            >
-                Helping new parents focus on what's important.
-            </Text>
+            <Center whitespace="nowrap">
+                <Text
+                    color="white"
+                    fontSize={fontSize}
+                    fontWeight="medium"
+                    position="absolute"
+                    top={top}
+                    // left="50%"
+                    // transform="translate(-50%, -50%)"
+                >
+                    Helping new parents focus on what's important.
+                </Text>
+            </Center>
             <Flex
                 alignItems="baseline"
                 color="white"
                 direction="row"
+                display={buttonDisplay}
                 justifyContent="center"
                 my={6}
                 position="absolute"

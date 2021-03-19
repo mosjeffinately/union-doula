@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Image, Text, Link } from '@chakra-ui/react';
+import { Box, Flex, Image, Link, useBreakpointValue } from '@chakra-ui/react';
 import {
     faFacebookSquare,
     faInstagram,
@@ -11,21 +11,31 @@ import logo from '../../public/images/Logo_White_PNG-cropped.png';
 import prideFlag from '../../public/images/64px-Gay_Pride_Flag.png';
 
 export const Footer = () => {
+    const imageDisplay = useBreakpointValue({ base: 'none', md: 'block' });
+
     return (
         <Flex
             align="center"
             bg="green.500"
             direction="row"
-            justify="space-between"
+            justify={['center', null, 'space-between']}
             width="100%"
         >
-            <Image alt="Union Doula" ml={4} p={6} height="8rem" src={logo} />
+            <Image
+                alt="Union Doula"
+                display={imageDisplay}
+                ml={4}
+                p={6}
+                height="8rem"
+                src={logo}
+            />
             <Flex
                 align="flex-start"
                 color="white"
                 direction="row"
                 justify="center"
-                mr={20}
+                mr={[0, null, 20]}
+                py={[4, null, 0]}
             >
                 <Box mx={2} width="1.75rem">
                     <Link

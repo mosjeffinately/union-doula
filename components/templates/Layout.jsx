@@ -8,7 +8,7 @@ export const Layout = ({ children, footer, header }) => {
             direction="column"
             fontFamily="body"
             justify="flex-start"
-            width="100%"
+            // width="100%"
         >
             <Box as="header" width="100%">{header}</Box>
             <Box as="main" width="100%">{children}</Box>
