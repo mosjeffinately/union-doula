@@ -6,7 +6,7 @@ export default class extends Document {
         return (
             <Html
                 style={{
-                    fontFamily: '"Raleway", "sans-serif"',
+                    fontFamily: '"Cabin", "sans-serif"',
                     fontSize: '16px'
                 }}
             >

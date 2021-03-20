@@ -10,7 +10,7 @@ const App = ({ Component, pageProps }) => (
             <title>Union Doula - Serving Central New York</title>
             <meta
                 name="description"
-                content="Providing postpartum doula services to the Central New York region."
+                content="Postpartum doula support for the entire family - overnight, during the day, or virtually.  Serving the Central New York region."
             />
             <meta name="robots" content="index, follow" />
             <meta

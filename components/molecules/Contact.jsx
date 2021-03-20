@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
+    AlertDialog,
+    AlertDialogBody,
+    AlertDialogCloseButton,
+    AlertDialogContent,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogOverlay,
     Box,
     Button,
     Center,
@@ -20,7 +27,7 @@ import {
 } from '@chakra-ui/react';
 import { send } from 'emailjs-com';
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
-import PhoneInput from 'react-phone-number-input/input';
+import PhoneInput, { formatPhoneNumber } from 'react-phone-number-input/input';
 
 export const Contact = ({ emailjsConfig }) => {
     const [contactMethod, setContactMethod] = useState([]);
@@ -28,6 +35,9 @@ export const Contact = ({ emailjsConfig }) => {
     const [message, setMessage] = useState('');
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
+    const [isAlertOpen, setIsAlertOpen] = useState(false);
+
+    const cancelRef = React.useRef();
 
     const onChangeCheckbox = ({ target: { checked, value } }) => {
         const checkedBoxes = contactMethod.filter(item => item !== value);
@@ -49,6 +59,8 @@ export const Contact = ({ emailjsConfig }) => {
         }
     };
 
+    const onClose = () => setIsAlertOpen(false);
+
     const onSubmit = e => {
         e.preventDefault();
 
@@ -57,7 +69,7 @@ export const Contact = ({ emailjsConfig }) => {
             email,
             message,
             name,
-            phone
+            phone: phone && formatPhoneNumber(phone)
         };
 
         send(
@@ -67,7 +79,7 @@ export const Contact = ({ emailjsConfig }) => {
             emailjsConfig.userId
         )
             .then(response => {
-                console.log(response);
+                setIsAlertOpen(true);
             })
             .catch(err => {
                 console.log(err);
@@ -222,6 +234,29 @@ export const Contact = ({ emailjsConfig }) => {
                     </Flex>
                 </Flex>
             </Box>
+            <AlertDialog
+                isOpen={isAlertOpen}
+                leastDestructiveRef={cancelRef}
+                motionPreset="slideInBottom"
+                onClose={onClose}
+            >
+                <AlertDialogOverlay />
+                <AlertDialogContent backgroundColor="gray.200">
+                    <AlertDialogHeader>Thank You</AlertDialogHeader>
+                    <AlertDialogCloseButton />
+                    <AlertDialogBody>
+                        <Text>
+                            Thank you for reaching out. I will follow up with
+                            you shortly on your request.
+                        </Text>
+                    </AlertDialogBody>
+                    <AlertDialogFooter>
+                        <Button ref={cancelRef} onClick={onClose}>
+                            OK
+                        </Button>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
         </Box>
     );
 };
